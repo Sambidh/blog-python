@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+<!--spacer-->
+{%block title%} Welcome to IBLOGS {%endblock%}
+<!--spacer-->
+{%block content%}
+<!--spacer-->
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <!-- posts loop -->
+      {%for p in posts %}
+      <div class="row">
+        <div class="col s12 m8">
+          {{p.content |truncatewords:60|safe }}
+          <div class="mt20">
+            <a href="/blog/{{p.url}}" class="btn bg-primary">Read more</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <img
+            src="/media/{{p.image}}"
+            class="responsive-img"
+            style="margin-top: 50px"
+          />
+        </div>
+      </div>
+      {%endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}
