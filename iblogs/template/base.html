@@ -21,14 +21,50 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <!--Owl Carousel-->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
   </head>
   <body>
     <!--Header-->
     {%include 'header.html'%}
     <!--Extra-->
-    {%block content%} {%endblock%}
+    {%block content%} {%endblock%} {%include 'footer.html'%}
   </body>
   <script>
     M.AutoInit();
+  </script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+
+        autoplay: true,
+
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 3,
+            nav: false,
+          },
+          1000: {
+            items: 3,
+            nav: true,
+            loop: false,
+          },
+        },
+      });
+    });
   </script>
 </html>

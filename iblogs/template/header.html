@@ -1,21 +1,22 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  {% for cat in cats %}
+
+  <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+
+  {% endfor %}
 </ul>
 <nav class="bg-primary">
   <div class="container">
     <div class="nav-wrapper">
-      <a href="/home" class="brand-logo">i blogs</a>
+      <a href="/home" class="brand-logo">IBLOGS</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/about">About</a></li>
-        <li><a href="/admin">Admin</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/admin">ADMIN</a></li>
         <!-- Dropdown Trigger -->
         <li>
           <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-            >Category<i class="material-icons right">arrow_drop_down</i></a
+            >CATEGORY<i class="material-icons right">arrow_drop_down</i></a
           >
         </li>
       </ul>
