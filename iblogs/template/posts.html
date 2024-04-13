@@ -1,19 +1,19 @@
 {%extends 'base.html'%}
 <!--spacer-->
-{%block title%} Post {%endblock%}
+{%block title%} Posts {%endblock%}
 <!--spacer-->
 {%block content%}
 <!--spacer-->
 <div class="container-custom">
   <div class="row">
-    <div class="col s12 m10">
+    <div class="col s12 m9">
       <h3>{{post.title}}</h3>
       <p>( {{post.cat.title}} )</p>
       <img src="/media/{{post.image}}" class="responsive-img" alt="" />
       <br />
       <p>{{post.content|safe}}</p>
     </div>
-    <div class="col s12 m2">
+    <div class="col s12 m3">
       {%for cat in cats %}
 
       <div class="card item" style="margin-left: 10px">
