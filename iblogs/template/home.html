@@ -6,6 +6,7 @@
 <!--spacer-->
 <div class="container-custom">
   <!-- Set up your HTML -->
+  <h3>Categories</h3>
   <div class="owl-carousel">
     {%for cat in cats %}
 
@@ -26,6 +27,7 @@
   </div>
 </div>
 <div class="container">
+  <h3>Posts</h3>
   <div class="row">
     <div class="col s12">
       <!-- posts loop -->
@@ -40,7 +42,7 @@
         <div class="col s12 m4">
           <img
             src="/media/{{p.image}}"
-            class="responsive-img"
+            class="responsive-img z-depth-5"
             style="margin-top: 50px"
           />
         </div>
