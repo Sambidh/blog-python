@@ -22,13 +22,13 @@ def post(request,url):
     #print(post)
     cats = Category.objects.all()
     
-
     return render(request,'posts.html',{'post' : post,'cats' : cats})
 
 def category(request,url):
     cat = Category.objects.get(url=url)
     posts = Post.objects.filter(cat=cat)
-    return render(request,'category.html',{'cat':cat, 'posts':posts})
+    cats = Category.objects.all()
+    return render(request,'category.html',{'cat':cat, 'posts':posts, 'cats': cats})
 
 def about(request):
     # print("hi")

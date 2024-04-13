@@ -1,26 +1,48 @@
 {%extends 'base.html'%}
 <!--spacer-->
-{%block title%} Welcome to IBLOGS {%endblock%}
+{%block title%} Categories {%endblock%}
 <!--spacer-->
 {%block content%}
 <!--spacer-->
 <div class="container-custom">
-  <h3>{{cat.title}}</h3>
-  <div class="img-container">
-    <img
-      src="/media/{{cat.image}}"
-      class="responsive-img z-depth-5"
-      style="max-height: 450px; width: 100%; object-fit: cover"
-      alt=""
-    />
-  </div>
-  <h3>Posts</h3>
-  <div class="collection">
-    {%for p in posts %}
-    <a href="/blog/{{p.url}}" class="collection-item">{{p.title}}</a>
-    {%empty%}
-    <h3>No post in this category</h3>
-    {%endfor%}
+  <div class="row">
+    <div class="col s12 m9">
+      <h3>{{cat.title}}</h3>
+      <div class="img-container">
+        <img
+          src="/media/{{cat.image}}"
+          class="responsive-img z-depth-5"
+          style="max-height: 450px; width: 100%; object-fit: cover"
+          alt=""
+        />
+      </div>
+      <h3>Posts</h3>
+      <div class="collection">
+        {%for p in posts %}
+        <a href="/blog/{{p.url}}" class="collection-item">{{p.title}}</a>
+        {%empty%}
+        <h3>No post in this category</h3>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="col s12 m3">
+      {%for cat in cats %}
+
+      <div class="card item" style="margin-left: 10px">
+        <div class="img-container">
+          <img src="/media/{{cat.image}}" class="responsive-img" />
+        </div>
+        <div class="card-content">
+          <b>{{cat.title}}</b>
+          <p class="truncate">{{cat.description}}</p>
+          <div class="mt20 center-align">
+            <a href="/category/{{cat.url}}" class="btn bg-primary">View</a>
+          </div>
+        </div>
+      </div>
+
+      {%endfor %}
+    </div>
   </div>
 </div>
 {%endblock%}
