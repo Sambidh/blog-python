@@ -6,7 +6,7 @@ Built a robust Blogpost Web App with Django, offering a seamless platform for co
 
 ## Deployment
 
-Please go through 'requeirements.txt' before deploying. You can create a virtual environment for that.
+Please go through 'requirements.txt' before deploying. You can create a virtual environment for that.
 
 First, you have to be inside of the folder 'iblogs' which you can do it by running following commands.
 
